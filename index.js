@@ -8,14 +8,23 @@ const empleados = [
 ];
 
 //let ana = console.log(empleados[1])
-let ana = empleados.find(empleado => empleado.name === "Ana");
+// let ana = empleados.find(empleado => empleado.name === "Ana");
+// 
+// console.log(ana)
 
-console.log(ana)
+const [, Ana] = empleados;
+
+console.log (Ana) ;
 
 //  Ejercicio 2 - Dado el objeto empleados, extrae el email de luis en la variable emailLuis
 
-let emailLuis =  empleados.find(empleado=> empleado.name === "Luis").email;
-console.log(emailLuis)
+// let emailLuis =  empleados.find(empleado=> empleado.name === "Luis").email;
+// console.log(emailLuis)
+
+const [{ email: emailLuis}] = empleados;
+
+console.log (emailLuis) ;
+
 
 
 // Ejecicio 3 - Dadas las variables a y b intercambia sus valores
@@ -54,15 +63,21 @@ console.log(maximaManana);
 //sumEveryOther(6, 8, 2, 3, 1); //20
 //sumEveryOther(11, 3, 12); //26
 
-function sumEveryOther(...rest) {
-    let total = 0;
-        for (let i = 0; i < rest.length; i++) {
-        total += rest[i];
-  }
-  return total;
-}
-console.log(sumEveryOther(6, 8, 2, 3, 1)); //20
-console.log(sumEveryOther(11, 3, 12)); //26
+// function sumEveryOther(...rest) {
+//     let total = 0;
+//         for (let i = 0; i < rest.length; i++) {
+//         total += rest[i];
+//   }
+//   return total;
+// }
+// console.log(sumEveryOther(6, 8, 2, 3, 1)); //20
+// console.log(sumEveryOther(11, 3, 12)); //26
+
+function sumEveryOther(...n) {
+    return n.reduce((a,b)=> a+b,0);
+    
+    }
+    console.log(sumEveryOther(11, 3, 12));
 
 // Ejercicio 6 - Escribe una función llamada addOnlyNums que pueda recibir 
 //cualquier número de argumentos (incluyendo números y strings y retorne la suma solo de los números) 
